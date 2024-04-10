@@ -4,7 +4,7 @@
 We will consider a, e, i, o, u as vowels for this Kata (but not y).
 
 The input string will only consist of lower case letters and/or spaces.
-# Solution:
+## Solution:
 def get_count(sentence):
     counts = 0
     for vowel in ["a", "e", "i", "o", "u"]:
@@ -19,6 +19,6 @@ Complete the solution so that it returns true if the first argument(string) pass
 Examples:
 solution('abc', 'bc') # returns true
 solution('abc', 'd') # returns false
-# Solution:
+## Solution:
 def solution(text, ending):
     return text.endswith(ending)
