@@ -52,37 +52,9 @@ Examples (input --> output):
 #Solution
 
 def rgb(r, g, b):
-    return convert_to_rgb(r) + convert_to_rgb(g) + convert_to_rgb(b)
-
-def convert_to_rgb(rgb_val):
-    if rgb_val <= 0:
-        return '00'
-    elif rgb_val >= 255:
-        return 'FF'
-    else:
-        first_hex = int(rgb_val // 16)
-        second_hex = int((rgb_val / 16 - first_hex) * 16)
-        return get_hex_value(first_hex) + get_hex_value(second_hex)
-
-def get_hex_value(digit):
-    rgb_to_hex = {
-        '0': '0',
-        '1': '1',
-        '2': '2',
-        '3': '3',
-        '4': '4',
-        '5': '5',
-        '6': '6',
-        '7': '7',
-        '8': '8',
-        '9': '9',
-        '10': 'A',
-        '11': 'B',
-        '12': 'C',
-        '13': 'D',
-        '14': 'E',
-        '15': 'F'
-    }
-    return rgb_to_hex[str(digit)]
+    def convert_to_hex(val):
+        return min(255, max(0, val)).to_bytes(1, 'big').hex().upper()
+    
+    return convert_to_hex(r) + convert_to_hex(g) + convert_to_hex(b)
 
 
